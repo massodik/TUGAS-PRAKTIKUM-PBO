@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Registration page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div align="center" class="col-md-12">
+    <h2>Welcome to Student registration page</h2>
+    <div class="col-md-6">
+        <form action="#" method="post" th:action="@{/save-student}" th:object="${student}">
+            <div class="form-group">
+                <label for="course">Mata Kuliah:</label>
+                <input class="form-control" id="course" th:field="*{course}" type="text">
+                <p class="alert alert-danger" th:errors="*{course}" th:if="${#fields.hasErrors('course')}">
+            </div>
+            <div class="form-group">
+                <label for="task">Tugas:</label>
+                <input class="form-control" id="task" th:field="*{task}" type="text">
+                <p class="alert alert-danger" th:errors="*{task}" th:if="${#fields.hasErrors('task')}">
+            </div>
+            <div class="form-group">
+                <label for="deadlineDate">Deadline Date:</label>
+                <input class="form-control" id="deadlineDate" th:field="*{deadlineDate}" type="date"/>
+                <p class="alert alert-danger" th:errors="*{deadlineDate}" th:if="${#fields.hasErrors('deadlineDate')}"/>
+            </div>
+            <div class="form-group">
+                <label for="hari">Hari:</label>
+                <input class="form-control" id="hari" th:field="*{hari}" type="text"/>
+                <p class="alert alert-danger" th:errors="*{hari}" th:if="${#fields.hasErrors('hari')}"/>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Dosen:</label>
+                <input class="form-control" id="email" th:field="*{email}" type="text">
+                <p class="alert alert-danger" th:errors="*{email}" th:if="${#fields.hasErrors('email')}">
+            </div>
+            <div class="form-group">
+                <label for="pengumpulan">Pengumpulan:</label>
+                <input class="form-control" id="pengumpulan" th:field="*{pengumpulan}" type="text">
+                <p class="alert alert-danger" th:errors="*{pengumpulan}" th:if="${#fields.hasErrors('pengumpulan')}">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
